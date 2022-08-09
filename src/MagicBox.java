@@ -3,6 +3,7 @@ import java.util.Random;
 public class MagicBox<T> {
     protected int maxNumberOfItems;
     protected T[] items;
+    protected Random random = new Random();
 
     public MagicBox(int maxNumberOfItems) {
         this.setMaxNumberOfItems(maxNumberOfItems);
@@ -33,7 +34,6 @@ public class MagicBox<T> {
         if (k < maxNumberOfItems) {
             throw new RuntimeException("Волшебная коробка не полна! Незаполненных ячеек - " + k + "! Дозаполните, пожалуйста, ячейки!");
         } else {
-            Random random = new Random();
             int randomInt = random.nextInt(maxNumberOfItems);
             return this.items[randomInt];
         }
